@@ -26,12 +26,18 @@ The project Game List is about a api to manage a list of games, with a complete 
 		- Service (Entities/ORM)
 		- Repository
 
+## Domain Model
+![Game Domain Model](src/main/resources/img/1.model.png "Domain Model")
+
 **1. Step**
 - Create project / lib Maven
 - Sabe Github
 - File Properties, entity Game, ORM
 - Seed of games
 - GameMinDTO, GameRepository,GameService, GameController
+
+**1. Step**
+- Implemented Domain Model
 
 ## API Endpoints
 
