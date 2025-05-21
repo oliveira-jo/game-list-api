@@ -36,8 +36,9 @@ The project Game List is about a api to manage a list of games, with a complete 
 - Seed of games
 - GameMinDTO, GameRepository,GameService, GameController
 
-**1. Step**
+**2. Step**
 - Implemented Domain Model
+- Update SEED in database
 
 ## API Endpoints
 
