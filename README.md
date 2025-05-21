@@ -1,17 +1,45 @@
 # Project Game List 
 
-**1. Introduction**
-
 The project Game List is about a api to manage a list of games, with a complete CRUD.
 
-**2. Tecnologies**
-- Java  
-- Spring Boot
-- Jpa
-- PostgreSQL
-- H2 Database for test
+## Structure
 
-**2. Endpoints**
+- Web System 
+	- Backend, Database, Server
+		- Linguagens
+		- Java
+		- SQL
+		- Framework
+		- Spring Boot
+		- Banco de dados
+		- H2
+		- Postgresql
+	- Requisições Web (HTTP/JSON)
+- API Rest
+	- Client/Server HTTP
+	- Comunication Stateless
+	- Uniform Interface 
+	- Cache
+	- Layered system
+		- Frontend app (JSON requests)
+		- Controller Rest (DTO)
+		- Service (Entities/ORM)
+		- Repository
+
+**1. Step**
+- Create project / lib Maven
+- Sabe Github
+- File Properties, entity Game, ORM
+- Seed of games
+- GameMinDTO, GameRepository,GameService, GameController
+
+## API Endpoints
+
+#### Find all games
+
+```http
+  GET /games
+```
 
 ## Features
 * Projeto estruturado 
