@@ -39,6 +39,7 @@ The project Game List is about a api to manage a list of games, with a complete 
 **2. Step**
 - Implemented Domain Model
 - Update SEED in database
+- GameDTO, search game by id
 
 ## API Endpoints
 
@@ -46,6 +47,12 @@ The project Game List is about a api to manage a list of games, with a complete 
 
 ```http
   GET /games
+```
+
+#### Find a games by a provide id
+
+```http
+  GET /games/id
 ```
 
 ## Features
