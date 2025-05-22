@@ -41,6 +41,8 @@ The project Game List is about a api to manage a list of games, with a complete 
 - Update SEED in database
 - GameDTO, search game by id
 - Search all game lists
+- SQL Searching, projection, 
+- Search games by lists
 
 ## API Endpoints
 
@@ -61,6 +63,17 @@ The project Game List is about a api to manage a list of games, with a complete 
 ```http
   GET /game-lists
 ```
+
+#### Retur a List by a provide list id
+
+```http
+  GET /game-lists/{id}/games
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `id`      | `long` | **Required**. The list ID for return a list of games |
+
 
 ## Features
 * Projeto estruturado 
@@ -164,15 +177,15 @@ public class WebConfig {
 ### GameRepository
 
 ```java
-@Query(nativeQuery = true, value = """
-		SELECT tb_game.id, tb_game.title, tb_game.game_year AS `year`, tb_game.img_url AS imgUrl,
-		tb_game.short_description AS shortDescription, tb_belonging.position
-		FROM tb_game
-		INNER JOIN tb_belonging ON tb_game.id = tb_belonging.game_id
-		WHERE tb_belonging.list_id = :listId
-		ORDER BY tb_belonging.position
-			""")
-List<GameMinProjection> searchByList(Long listId);
+  @Query(nativeQuery = true, value = """
+      SELECT tb_game.id, tb_game.title, tb_game.game_year AS gameYear, tb_game.img_url AS imgUrl,
+      tb_game.short_description AS shortDescription, tb_belonging.position
+      FROM tb_game
+      INNER JOIN tb_belonging ON tb_game.id = tb_belonging.game_id
+      WHERE tb_belonging.list_id = :listId
+      ORDER BY tb_belonging.position
+        """)
+  List<GameMinProjection> searchByList(Long listId);
 ```
 
 ### GameListRepository
