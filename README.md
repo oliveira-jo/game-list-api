@@ -44,6 +44,14 @@ The project Game List is about a api to manage a list of games, with a complete 
 - SQL Searching, projection, 
 - Search games by lists
 
+**2. Step**
+<!-- 
+- Project profile
+- Local environment with Docker Compose
+- Approval process with DB in container
+- Deploy process with  CI/CD
+- CORS configuration
+ -->
 ## API Endpoints
 
 #### Find all games
@@ -129,7 +137,7 @@ spring.jpa.properties.hibernate.format_sql=true
 
 spring.datasource.url=jdbc:postgresql://localhost:5432/game-list
 spring.datasource.username=postgres
-spring.datasource.password=
+spring.datasource.password=1234567
 
 spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
 spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
