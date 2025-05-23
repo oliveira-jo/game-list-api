@@ -47,17 +47,18 @@ The project Game List is about a api to manage a list of games, with a complete 
 - SQL Searching, projection, 
 - Search games by lists
 
-**2. Step**
-
+**3. Step**
 - Project profile
 - Local environment with Docker Compose
 - Approval process with DB in container 
 	- (homologation postgres DB in docker)
 - CORS configuration
-<!-- 
 - Deploy process with  CI/CD
- -->
- 
+- Search games by lists
+
+**4. Step**
+- Special endpoint to move games in list by position
+
 ## API Endpoints
 
 #### Find all games
@@ -78,7 +79,7 @@ The project Game List is about a api to manage a list of games, with a complete 
   GET /game-lists
 ```
 
-#### Retur a List by a provide list id
+#### Retur a list by a provide list id
 
 ```http
   GET /game-lists/{id}/games
@@ -87,6 +88,18 @@ The project Game List is about a api to manage a list of games, with a complete 
 | Parâmetro   | Tipo       | Descrição                                   |
 | :---------- | :--------- | :------------------------------------------ |
 | `id`      | `long` | **Required**. The list ID for return a list of games |
+
+#### Move games on list
+
+```http
+  GET /game-lists/{id}/replacement
+```
+
+| Parâmetro   | Tipo       | Descrição                                   |
+| :---------- | :--------- | :------------------------------------------ |
+| `id`      | `long` | **Required**. The list ID for return a list of games |
+| `sourceIndex`      | `String` | **Required**. The source index of the game |
+| `destinationIndex`      | `String` | **Required**. The destination index of the game |
 
 
 ## Features
