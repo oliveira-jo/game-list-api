@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.devjoliveira.game_list.services.GameService;
 
-import jakarta.websocket.server.PathParam;
-
 @RestController
 @RequestMapping("/games")
 public class GameController {

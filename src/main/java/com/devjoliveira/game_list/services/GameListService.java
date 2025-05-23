@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.devjoliveira.game_list.dto.GameListDto;
-import com.devjoliveira.game_list.dto.GameMinDto;
 import com.devjoliveira.game_list.entities.GameList;
 import com.devjoliveira.game_list.projections.GameMinProjection;
 import com.devjoliveira.game_list.repositories.GameListRepository;
