@@ -29,6 +29,9 @@ The project Game List is about a api to manage a list of games, with a complete 
 ## Domain Model
 ![Game Domain Model](src/main/resources/img/1.model.png "Domain Model")
 
+## Relationship
+![Relationship](src/main/resources/img/2.relacionamentos.png "Relationship")
+
 **1. Step**
 - Create project / lib Maven
 - Sabe Github
@@ -49,7 +52,7 @@ The project Game List is about a api to manage a list of games, with a complete 
 - Project profile
 - Local environment with Docker Compose
 - Approval process with DB in container 
-	- (homologação DB in docker)
+	- (homologation postgres DB in docker)
 <!-- 
 - Deploy process with  CI/CD
 - CORS configuration
@@ -86,12 +89,12 @@ The project Game List is about a api to manage a list of games, with a complete 
 
 
 ## Features
-* Projeto estruturado 
-* Domínio e consultas 
-* Homologação e CORS 
-* Endpoint especial 
+* Project structure  
+* Domain and queries 
+* Homologation and CORS 
+* Special endpoint 
 
-## Code COnfiguration
+## Code Configuration
 
 ### Plug-in Maven 
 
