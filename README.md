@@ -53,10 +53,11 @@ The project Game List is about a api to manage a list of games, with a complete 
 - Local environment with Docker Compose
 - Approval process with DB in container 
 	- (homologation postgres DB in docker)
+- CORS configuration
 <!-- 
 - Deploy process with  CI/CD
-- CORS configuration
  -->
+ 
 ## API Endpoints
 
 #### Find all games
