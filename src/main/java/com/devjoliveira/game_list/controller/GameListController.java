@@ -48,7 +48,7 @@ public class GameListController {
 
   @PostMapping()
   public ResponseEntity<?> save(@RequestBody @Valid GameListDto request) {
-    return ResponseEntity.ok().body(gameListService.addGameList(request));
+    return ResponseEntity.ok().body(gameListService.save(request));
   }
 
   @DeleteMapping("/{id}")

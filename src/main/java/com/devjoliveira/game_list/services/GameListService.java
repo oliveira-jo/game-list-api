@@ -48,7 +48,7 @@ public class GameListService {
 
   }
 
-  public GameListDto addGameList(GameListDto request) {
+  public GameListDto save(GameListDto request) {
     GameList newGameList = new GameList();
     newGameList.setName(request.name());
 
