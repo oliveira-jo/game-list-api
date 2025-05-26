@@ -56,4 +56,23 @@ public class GameListService {
 
   }
 
+  public void delete(Long id) {
+    GameList fromDB = gameListRepository.findById(id)
+        .orElseThrow(() -> new IllegalArgumentException("Game list not found with id: " + id));
+
+    gameListRepository.delete(fromDB);
+
+  }
+
+  public Object change(Long id, GameListDto request) {
+    GameList fromDB = gameListRepository.findById(id).orElseThrow(
+        () -> new IllegalArgumentException("Game list not found with id: " + id));
+
+    fromDB.setName(request.name());
+    GameList updatedGameList = gameListRepository.save(fromDB);
+
+    return new GameListDto(updatedGameList);
+
+  }
+
 }
