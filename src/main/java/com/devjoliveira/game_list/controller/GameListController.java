@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.devjoliveira.game_list.dto.GameListDto;
 import com.devjoliveira.game_list.dto.ReplacementDto;
 import com.devjoliveira.game_list.services.GameListService;
 import com.devjoliveira.game_list.services.GameService;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/game-lists")
@@ -38,6 +41,11 @@ public class GameListController {
   public ResponseEntity<Void> move(@PathVariable Long listId, @RequestBody ReplacementDto replacementDto) {
     gameListService.move(listId, replacementDto.sourceIndex(), replacementDto.destinationIndex());
     return ResponseEntity.ok().build();
+  }
+
+  @PostMapping()
+  public ResponseEntity<?> addGameList(@RequestBody @Valid GameListDto request) {
+    return ResponseEntity.ok().body(gameListService.addGameList(request));
   }
 
 }
