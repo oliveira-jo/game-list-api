@@ -50,4 +50,38 @@ public class GameService {
 
   }
 
+  public GameDto save(GameDto request) {
+
+    return new GameDto(
+        this.gameRepository.save(
+            new Game(request)));
+
+  }
+
+  public void delete(Long id) {
+    Game fromDB = gameRepository.findById(id)
+        .orElseThrow(() -> new IllegalArgumentException("Game not found with id: " + id));
+
+    gameRepository.delete(fromDB);
+
+  }
+
+  public GameDto change(Long id, GameDto request) {
+    Game fromDB = gameRepository.findById(id).orElseThrow(
+        () -> new IllegalArgumentException("Game list not found with id: " + id));
+
+    fromDB.setTitle(request.title());
+    fromDB.setYear(request.year());
+    fromDB.setGenre(request.genre());
+    fromDB.setPlatforms(request.platforms());
+    fromDB.setScore(request.score());
+    fromDB.setImgUrl(request.imgUrl());
+    fromDB.setShortDescription(request.shortDescription());
+    fromDB.setLongDescription(request.longDescription());
+
+    return new GameDto(
+        gameRepository.save(fromDB));
+
+  }
+
 }

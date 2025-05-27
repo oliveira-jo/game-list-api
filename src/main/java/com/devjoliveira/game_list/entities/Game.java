@@ -1,5 +1,7 @@
 package com.devjoliveira.game_list.entities;
 
+import com.devjoliveira.game_list.dto.GameDto;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,17 +31,16 @@ public class Game {
   public Game() {
   }
 
-  public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
-      String shortDescription, String longDescription) {
-    this.id = id;
-    this.title = title;
-    this.year = year;
-    this.genre = genre;
-    this.platforms = platforms;
-    this.score = score;
-    this.imgUrl = imgUrl;
-    this.shortDescription = shortDescription;
-    this.longDescription = longDescription;
+  public Game(GameDto gameDto) {
+    this.id = gameDto.id();
+    this.title = gameDto.title();
+    this.year = gameDto.year();
+    this.genre = gameDto.genre();
+    this.platforms = gameDto.platforms();
+    this.score = gameDto.score();
+    this.imgUrl = gameDto.imgUrl();
+    this.shortDescription = gameDto.shortDescription();
+    this.longDescription = gameDto.longDescription();
   }
 
   public Long getId() {

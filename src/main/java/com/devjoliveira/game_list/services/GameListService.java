@@ -64,14 +64,14 @@ public class GameListService {
 
   }
 
-  public Object change(Long id, GameListDto request) {
+  public GameListDto change(Long id, GameListDto request) {
     GameList fromDB = gameListRepository.findById(id).orElseThrow(
         () -> new IllegalArgumentException("Game list not found with id: " + id));
 
     fromDB.setName(request.name());
-    GameList updatedGameList = gameListRepository.save(fromDB);
 
-    return new GameListDto(updatedGameList);
+    return new GameListDto(
+        gameListRepository.save(fromDB));
 
   }
 
